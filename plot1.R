@@ -9,10 +9,10 @@ datetime <-  paste( d$Date, d$Time)
 d$datetime <- strptime( datetime, "%d/%m/%Y %H:%M:%S")
 
 fdate <- as.POSIXct("2007-02-01 00:00:00")  # from date
-tdate <- as.POSIXct("2007-02-02 23:59:59")  # to date
+tdate <- as.POSIXct("2007-02-02 24:00:00")  # to date
 
 # subset the data
-d1 <- subset(d, datetime <= tdate & datetime >= fdate) 
+d1 <- subset(d, datetime < tdate & datetime >= fdate) 
 
 
 
